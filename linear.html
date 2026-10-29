@@ -1,0 +1,45 @@
+records = [
+    "A102|Ravi Kumar|ravi@example.com|9876543210",
+    "B205|Anu Rao|anu.example.com|9876543211",
+    "A102|Maya Das|maya@example.com|9876543212",
+    "C3|John Lee|john@example.com|12345"
+]
+
+seen_ids = []
+
+for record in records:
+    fields = record.split("|")
+    errors = []
+
+    if len(fields) != 4:
+        errors.append("FIELD_COUNT")
+    else:
+        reg_id, name, email, phone = fields
+
+        if not (4 <= len(reg_id) <= 8) or not reg_id.isalnum():
+            errors.append("INVALID_ID")
+
+        if not name.replace(" ", "").isalpha():
+            errors.append("INVALID_NAME")
+
+        if "@" not in email or "." not in email.split("@")[-1]:
+            errors.append("INVALID_EMAIL")
+
+        if len(phone) != 10 or not phone.isdigit():
+            errors.append("INVALID_PHONE")
+
+        if reg_id in seen_ids:
+            errors.append("DUPLICATE_ID")
+
+        seen_ids.append(reg_id)
+
+    if errors:
+        print(record, "-> INVALID:", ", ".join(errors))
+    else:
+        print(
+            "ID:", reg_id,
+            "| Name:", name,
+            "| Email:", email,
+            "| Phone:", phone,
+            "-> VALID"
+        )

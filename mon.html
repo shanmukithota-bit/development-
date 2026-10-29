@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio and Video</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            background-color: darkblue;
+            color: white;
+            padding: 15px;
+        }
+        .box {
+            background-color: white;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+        audio {
+            width: 100%;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 10px;
+        }
+        h2 {
+            color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My Multimedia Page</h1>
+    <div class="box">
+        <h2>Audio 1 - My Song</h2>
+        <audio controls>
+            <source src="C:\Users\maryj\Downloads\Imagine_Dragon_-_Believer_(mp3.pm).mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    <div class="box">
+        <h2>Audio 2 - Background Music</h2>
+        <audio controls loop>
+            <source src="media/music.mp3" type="audio/mpeg">
+            Your browser does not support audio.
+        </audio>
+    </div>
+
+    <!-- Video Section -->
+    <div class="box">
+        <h2>Video 1 - My Video</h2>
+
+        <video controls poster="media/poster.jpg">
+            <source src="media/video.mp4" type="video/mp4">
+            Your browser does not support video.
+        </video>
+    </div>
+
+    <div class="box">
+        <h2>Video 2 - Nature Video</h2>
+
+        <video controls>
+            <source src="media/nature.mp4" type="video/mp4">
+            Your browser does not support video.
+        </video>
+    </div>
+
+</body>
+</html>
